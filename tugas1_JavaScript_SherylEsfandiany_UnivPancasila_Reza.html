@@ -1,0 +1,61 @@
+<script Language="javascript">
+    //variabel dan tipe data
+    let namaPegawai = "Ridwan";
+    let statusJabatan = "Manager";
+    let statusMenikah = "Sudah Menikah";
+    let gajiPokok;
+    //struktur kendali
+    if(statusJabatan == 'Manager'){
+        gajiPokok = 15000000;
+    }
+    else if(statusJabatan == 'Asisten Manager'){
+        gajiPokok = 10000000;
+    }
+    else{
+        gajiPokok = 5000000;
+    }
+    let tunjanganJabatan = gajiPokok * 15/100;
+    let bpjs = gajiPokok * 10/100;
+    let tunjanganKeluarga =  statusMenikah == 'Sudah Menikah' ? gajiPokok * 20 / 100 :0;
+    let totalGaji = gajiPokok + tunjanganKeluarga + tunjanganJabatan + bpjs;
+    //cetak
+    document.write(`
+    Nama Pegawai = ${namaPegawai} <br/>
+    Jabatan = ${statusJabatan} <br/>
+    Status = ${statusMenikah} </br>
+    <br/>
+
+    <table border="1">
+    <thead bgcolor="pink">
+        <tr>
+            <th>Pemasukan Gaji Pokok</th>
+            <th>Jumlah</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Gaji Pokok</td>
+            <td>${gajiPokok}</td>
+        </tr>
+        <tr>
+            <td>Tunjangan Jabatan</td>
+            <td>${tunjanganJabatan}</td>
+        </tr>
+        <tr>
+            <td>BPJS</td>
+            <td>${bpjs}</td>
+        </tr>
+        <tr>
+            <td>Tunjangan Keluarga</td>
+            <td>${tunjanganKeluarga}</td>
+        </tr>
+    </tbody>
+    <tfoot bgcolor="grey">
+        <tr>
+            <th>Total Gaji</th>
+            <th>${totalGaji}</th>
+        </tr>
+    </tfoot>
+</table>
+    `)
+</script>
